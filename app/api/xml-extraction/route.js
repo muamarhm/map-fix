@@ -12,11 +12,12 @@ export async function GET(req) {
 
     const parser = new xml2js.Parser()
     const jsonData = await parser.parseStringPromise(xmlData)
-    const status =
-      jsonData?.Sitedown?.Status[0].trim() === 'Open' ? false : true // Trim whitespace
+    const status = jsonData?.Sitedown?.Status[0].trim() == 'Open' ? false : true // Trim whitespace
     const name = jsonData?.Sitedown?.Sitename[0] || null
 
-    const updateResult = await db('maps').where({ name }).update({ status })
+    const updateResult = await db('maps').update('status', status).where({
+      name,
+    })
 
     const statusText = status ? 'Up' : 'Down'
     let message
