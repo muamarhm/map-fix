@@ -32,7 +32,7 @@ export async function GET(req) {
     const statusText = status ? 'Up' : 'Down'
     let message
     if (updateResult) {
-      message = `Successfully updated status for ${name} - ${statusText}`
+      message = `Successfully updated status for ${name} - ${statusText} - ${new Date()}`
       console.log(message)
     } else {
       message = `No records updated for ${name} - ${statusText}`
