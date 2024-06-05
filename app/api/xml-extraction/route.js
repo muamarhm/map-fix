@@ -41,6 +41,7 @@ export async function GET(req) {
 
     return NextResponse.json({
       message: message,
+      detail: new Date(),
     })
   } catch (error) {
     console.error(error)
