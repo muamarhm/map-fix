@@ -119,15 +119,15 @@ const MapRestric = () => {
                 {isActive ? (
                   <Image
                     src='/map-icon/active.png'
-                    width={14}
-                    height={14}
+                    width={24}
+                    height={24}
                     alt='Active'
                   />
                 ) : (
                   <Image
                     src='/map-icon/notActive.png'
-                    width={14}
-                    height={14}
+                    width={24}
+                    height={24}
                     alt='Active'
                     className='animate-ping'
                   />
